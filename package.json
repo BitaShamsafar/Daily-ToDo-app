@@ -11,6 +11,7 @@
     "@types/node": "^16.7.13",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "gh-pages": "^6.3.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-scripts": "5.0.1",
@@ -21,7 +22,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -29,6 +32,7 @@
       "react-app/jest"
     ]
   },
+  "homepage": "https://bitashamsafar.github.io/Daily-ToDo-app/",
   "browserslist": {
     "production": [
       ">0.2%",
