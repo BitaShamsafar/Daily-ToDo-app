@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Daily-ToDo-app/static/css/main.a6aa4772.css",
+    "main.js": "/Daily-ToDo-app/static/js/main.4eb20b2c.js",
+    "static/js/453.898519e2.chunk.js": "/Daily-ToDo-app/static/js/453.898519e2.chunk.js",
+    "index.html": "/Daily-ToDo-app/index.html",
+    "main.a6aa4772.css.map": "/Daily-ToDo-app/static/css/main.a6aa4772.css.map",
+    "main.4eb20b2c.js.map": "/Daily-ToDo-app/static/js/main.4eb20b2c.js.map",
+    "453.898519e2.chunk.js.map": "/Daily-ToDo-app/static/js/453.898519e2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a6aa4772.css",
+    "static/js/main.4eb20b2c.js"
+  ]
+}
