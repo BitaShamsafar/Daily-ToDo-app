@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
 import './App.css';
+import AppHeader from './components/AppHeader';
+import AddNew from './components/AddNew';
+import TodoDataContextProvider from './context/ToDoDataContext';
+import Todos from './components/Todos';
+import defaultData from "./asset.json"
 
 function App() {
+  useEffect(() => { 
+    const localData = localStorage.getItem("todoData");
+   
+    if (!localData) {
+      localStorage.setItem("todoData", JSON.stringify(defaultData));
+    }
+
+    }, [])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TodoDataContextProvider>
+        <div className='Wrapper'>
+          <AppHeader />
+          <Todos />
+          <AddNew />
+        </div>
+      </TodoDataContextProvider>
     </div>
   );
 }

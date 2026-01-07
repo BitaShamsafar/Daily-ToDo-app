@@ -1,38 +1,250 @@
+:root {
+   --bg: #ffffff;
+   --border: #61dafb;
+   --text-primary: #f679b7;
+   --text-secondary: #6b7280;
+}
 .App {
   text-align: center;
+  padding: 50px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Wrapper {
+  min-height: 350px;
+  width: 60vw;
+  margin: auto;
+  border: 2px solid var(--border);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+.App-header {
+  color: var(--text-primary);
+}
+.AddNew{
+  margin: auto;
+  display: flex;
+  width: 90%;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+}
+.AddNew textarea {
+  padding: 10px;
+  width: 70%  !important;
+  min-height: fit-content;
+  font-size: 15px;
+  color:var(--text-secondary);
+  resize: none;
+  border-radius: 5px;
+  border: 1px solid rgb(224, 223, 223);
+  text-align: center;
+}
+.AddNew textarea:focus {
+  outline: none;
+  border: 2px solid var(--border);
+  text-align: left;
+}
+.AddNew textarea:focus ~ button {
+  color: var(--text-primary)
+}
+.AddNew button {
+  padding-top: 15px;
+  font-size: 35px;
+  font: bolder;
+  margin: -10px 0px 0px 10px;
+  background-color: var(--bg);
+  color: var(--text-secondary);
+  border: none;
+  cursor: pointer;
+}
+.todo_row{
+  display: flex;
+  padding: 5px;
+  border-bottom: 1px solid #d1d5db;
+}
+.todo_el:first-child{
+  width: 40%;
+}
+.todo_el:nth-child(2){
+  width: 20%;
+}
+.todo_el:nth-child(3){
+  width: 20%;
+}
+
+.todo_header{
+  font-weight: bolder;
+  padding: 10px 0px;
+}
+.todo_el{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Base select styling */
+select {
+  appearance: none; /* removes default arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  max-width: 280px;
+  padding: 10px 40px 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+margin-right: 10px;
+  color: #1f2937; /* gray-800 */
+  background-color: #ffffff;
+
+  border: 1px solid #d1d5db; /* gray-300 */
+  border-radius: 8px;
+
+  cursor: pointer;
+  outline: none;
+
+  background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='20' viewBox='0 0 20 20' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M5.5 7.5L10 12l4.5-4.5'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover */
+select:hover {
+  border-color: #9ca3af; /* gray-400 */
+}
+
+/* Focus */
+select:focus {
+  border-color: #2563eb; /* blue-600 */
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* Disabled */
+select:disabled {
+  background-color: #f3f4f6;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Option styling (limited support, but safe) */
+option {
+  padding: 8px;
+  font-size: 14px;
+}
+
+/* Selected option */
+option:checked {
+  background-color: #2563eb;
   color: white;
 }
+/* Date input base */
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
 
-.App-link {
-  color: #61dafb;
+  width: 100%;
+  max-width: 280px;
+
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+
+  color: #1f2937; /* gray-800 */
+  background-color: #ffffff;
+
+  border: 1px solid #d1d5db; /* gray-300 */
+  border-radius: 8px;
+
+  cursor: pointer;
+  outline: none;
+
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Hover */
+input[type="date"]:hover {
+  border-color: #9ca3af; /* gray-400 */
+}
+
+/* Focus */
+input[type="date"]:focus {
+  border-color: #2563eb; /* blue-600 */
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* Disabled */
+input[type="date"]:disabled {
+  background-color: #f3f4f6;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Remove clear button (Chrome) */
+input[type="date"]::-webkit-clear-button {
+  display: none;
+}
+
+/* Calendar icon styling (Chrome / Edge) */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(0.4);
+  opacity: 0.8;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+
+/* Text input (Todo title) */
+.add-todo-form input[type="text"] {
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.add-todo-form input[type="text"]:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* Submit button */
+.add-todo-form button {
+  width: 30%;
+  margin-top: 15px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 500;
+
+  color: #ffffff;
+  background-color: #2563eb;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.add-todo-form button:hover {
+  background-color: #1d4ed8;
+}
+
+.add-todo-form button:active {
+  transform: scale(0.98);
+}
+
+.add-todo-form button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
 }
