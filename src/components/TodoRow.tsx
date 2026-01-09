@@ -36,7 +36,7 @@ const TodoRow = ({todo}: any) => {
                 <option value="in_progress">In Progress</option>
                 <option value="pending">Pending</option>
             </select>
-            <div className="todo_el" style={{color:'red'}} onClick={() => dispatch({type: "REMOVE_TODO", payload: todo.name})}>X</div>
+            <div className="todo_el" style={{color:'red'}} onClick={() => dispatch({type: "REMOVE_TODO", payload: todo.id})}>X</div>
         </div>
 
     )

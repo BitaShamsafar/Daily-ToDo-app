@@ -14,7 +14,7 @@ const todoReducer = (state: any, action: any) => {
             localStorage.setItem('todoData', JSON.stringify([...state, action.payload]))
             return [...state, action.payload]
         case 'REMOVE_TODO':
-            const updatedTodos = state.filter((todo: any) => todo.name !== action.payload)
+            const updatedTodos = state.filter((todo: any) => todo.id !== action.payload)
             localStorage.setItem('todoData', JSON.stringify(updatedTodos))
             return updatedTodos
         case 'update_TODO':  
